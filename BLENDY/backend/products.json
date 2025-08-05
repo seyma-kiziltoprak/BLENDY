@@ -1,0 +1,105 @@
+[
+    {
+        "id":1,
+        "name": "Turunçgil",
+        "description":"Güneşin enerjisini içinde barındıran bu smoothie, limon, ananas ve portakalın ferahlatıcı uyumuna balın doğal tatlılığıyla eşlik ediyor. C vitamini açısından zengin içeriğiyle bağışıklık sistemini destekler ve gün içinde enerji dolu hissetmene yardımcı olur. Tazeliğini 3 gün boyunca koruduğu için siparişini teslim aldıktan sonra 3 gün içinde tüketmen gerekir.",
+        "content":"Limon, Ananas, Portakal, Bal",
+        "price":250 ,
+        "calorie": "120 kcal",
+        "image": "images/smoothie/img1.png",
+        "imagedetail": "images/smoothie/detail1.png"
+    },
+    {
+        "id":2,
+        "name": "Pinko",
+        "description":"Pembenin en tatlı hali! Limonun ferahlığı, çilek ve karpuzun tatlı aroması, muzun yumuşak dokusu ile buluşuyor. Antioksidan bakımından zengin içeriğiyle cildini canlandırır ve yazı anımsatan taptaze bir içim sunar. Tazeliğini 3 gün boyunca koruduğu için siparişini teslim aldıktan sonra 3 gün içinde tüketmen gerekir.",
+        "content":"Limon,Çilek,Karpuz, Muz",
+        "price":250 ,
+        "calorie": "132 kcal",
+        "image": "images/smoothie/img2.png",
+        "imagedetail": "images/smoothie/detail2.png"
+    },
+    {
+        "id":3,
+        "name": "Sunkissed",
+        "description":"Güneşin sıcacık dokunuşunu hissedeceğin bu içecek, zencefilin hafif baharatlı aromasıyla ananas, sarı incir ve kivinin tatlı ekşiliğini harmanlıyor. Sindirimi destekleyen bu özel karışım, gün boyu zinde kalmana katkıda bulunur. Tazeliğini 3 gün boyunca koruduğu için siparişini teslim aldıktan sonra 3 gün içinde tüketmen gerekir.",
+        "content":"Zencefil, Ananas, Sarı İncir, Kivi",
+        "price":250 ,
+        "calorie": "198 kcal",
+        "image": "images/smoothie/img3.png",
+        "imagedetail": "images/smoothie/detail3.png"
+    },
+    {
+        "id":4,
+        "name": "Forest",
+        "description":"Yeşilin her tonu bu şişede! Çeşit çeşit yeşil sebzelerden oluşan bu smoothie, C vitamini içeriği ile bağışıklık sisteminin normal fonksiyonuna katkıda bulunur. Aynı zamanda yorgunluk ve bitkinliğin azalmasına destek olur. Tazeliğini 3 gün boyunca koruduğu için siparişini teslim aldıktan sonra 3 gün içinde tüketmen gerekir.",
+        "content":"Salatalık, Kereviz, Kara Lahana, Limon",
+        "price":250 ,
+        "calorie": "147 kcal",
+        "image": "images/smoothie/img4.png",
+        "imagedetail": "images/smoothie/detail4.png"
+    },
+    {
+        "id":5,
+        "name": "Morbidberry",
+        "description":"Doğadan gelen güçlü bir lezzet! Pancar, melisa, hibisküs ve gül kurusunun birleşimiyle hazırlanan bu smoothie, antioksidan bakımından zengin içeriğiyle vücudunu arındırırken aynı zamanda ruhunu da yeniler. Tazeliğini 3 gün boyunca koruduğu için siparişini teslim aldıktan sonra 3 gün içinde tüketmen gerekir.",
+        "content":"Pancar, Melisa, Hibisküs, Gül Kurusu",
+        "price":250 ,
+        "calorie": "103 kcal",
+        "image": "images/smoothie/img5.png",
+        "imagedetail": "images/smoothie/detail5.png"
+    },
+    {
+        "id":6,
+        "name": "Crush",
+        "description":"Yoğun ve etkileyici bir tat deneyimi sunan Crush, vişne, çilek ve üzümün tatlı ekşiliğini tarçının sıcak dokunuşuyla birleştiriyor. Kan dolaşımını destekleyen içeriğiyle enerjini yükseltir ve günün her anında ferahlık sağlar. Tazeliğini 3 gün boyunca koruduğu için siparişini teslim aldıktan sonra 3 gün içinde tüketmen gerekir.",
+        "content":"Vişne, Çilek, Üzüm, Tarçın",
+        "price":250 ,
+        "calorie": "172 kcal",
+        "image": "images/smoothie/img6.png",
+        "imagedetail": "images/smoothie/detail6.png"
+    },
+    {
+        "id":7,
+        "name": "Kahve",
+        "description":"Enerjini yenilemek için ideal bir seçim! Kahve, hurma, badem ve chia tohumu ile hazırlanan bu smoothie, yoğun aromasıyla güne zinde başlamana yardımcı olur. Sağlıklı yağlar ve lif içeriği sayesinde uzun süre tok tutar. Tazeliğini 3 gün boyunca koruduğu için siparişini teslim aldıktan sonra 3 gün içinde tüketmen gerekir.",
+        "content":"Kahve, Hurma, Badem, Chia Tohumu",
+        "price":250 ,
+        "calorie": "110 kcal",
+        "image": "images/smoothie/img7.png",
+        "imagedetail": "images/smoothie/detail7.png"
+    },
+    {
+        "id":8,
+        "name": "Light Gold",
+        "description":"Ferahlatıcı ve yenileyici bir içim sunan Light Gold, elma sirkesi, elma, kambucha kültürü ve kajunun özel uyumuyla hazırlanıyor. Sindirim sistemine destek olan içeriğiyle vücudunu dengeler ve ferahlık hissi sağlar. Tazeliğini 3 gün boyunca koruduğu için siparişini teslim aldıktan sonra 3 gün içinde tüketmen gerekir.",
+        "content":"Elma Sirkesi, Elma, Kambucha Kültürü, Kaju",
+        "price":250 ,
+        "calorie": "163 kcal",
+        "image": "images/smoothie/img8.png",
+        "imagedetail": "images/smoothie/detail8.png"
+    },
+    {
+        "id":9,
+        "name": "Gül",
+        "description":"Zarif ve rahatlatıcı bir lezzet! Gül kurusu, papatya, badem ve balın eşsiz birleşimiyle hazırlanan bu smoothie, hafif ve huzur verici aromasıyla zihnini dinlendirirken bedeni de besler. Tazeliğini 3 gün boyunca koruduğu için siparişini teslim aldıktan sonra 3 gün içinde tüketmen gerekir.",
+        "content":"Gül Kurusu, Papatya, Badem, Bal",
+        "price":250 ,
+        "calorie": "158 kcal",
+        "image": "images/smoothie/img9.png",
+        "imagedetail": "images/smoothie/detail9.png"
+    },
+    {
+        "id":10,
+        "name": "Bulut",
+        "description":"Hafif ve yumuşak bir içim! Blueberry, muz, Hindistan cevizi ve kajunun harmanıyla oluşturulan Bulut, içerdiği doğal bileşenlerle bağışıklık sistemine destek olur ve tatlı ihtiyacını sağlıklı bir şekilde karşılar. Tazeliğini 3 gün boyunca koruduğu için siparişini teslim aldıktan sonra 3 gün içinde tüketmen gerekir.",
+        "content":"Blueberry, Muz, Hindistan Cevizi, Kaju",
+        "price":250 ,
+        "calorie": "105 kcal",
+        "image": "images/smoothie/img10.png",
+        "imagedetail": "images/smoothie/detail10.png"
+    }
+
+    
+    
+]

@@ -1,0 +1,300 @@
+h1, h2, h3 {
+  font-weight: 600;
+  color: var(--dark-text);
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+h1 {
+  margin-top: 80px;
+  font-size: 3.6rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.8rem;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--raspberry);
+}
+
+button {
+  padding: 1.2rem 2.4rem;
+  background-color: var(--pink);
+  color: var(--soft-white);
+  font-size: 1.6rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+  box-shadow: var(--box-shadow);
+  border: var(--border);
+}
+
+button:hover {
+  background-color: var(--raspberry);
+}
+
+.order {
+  background-color: var(--soft-white);
+  border-radius: 1.2rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--box-shadow);
+  border: var(--outline);
+  color: var(--dark-text);
+}
+
+.order ul {
+  padding-left: 2rem;
+  list-style-type: disc;
+}
+
+.order li {
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.empty-message {
+  text-align: center;
+  color: var(--light-gray);
+  margin-top: 5rem;
+  font-size: 1.8rem;
+}
+
+.order-container {
+  max-width: 1200px;
+  margin: 120px auto 40px; 
+  padding: 0 20px;
+}
+
+.order-box {
+  background-color: #fff;
+  padding: 30px;
+  margin-bottom: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border: 1px solid #eee;
+  margin-top: 20px;
+}
+
+.fancy-title {
+  font-size: 3.2rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.fancy-title .emoji {
+  font-size: 2.8rem;
+  margin-right: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.6rem;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.create-order-btn {
+  background-color: #F16DAE;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto; 
+}
+
+.create-order-btn:hover {
+  background-color: #c72e5d;
+}
+.order-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.order-card p {
+  margin: 0.5rem 0;
+}
+
+.order-total {
+  color: green;
+  font-weight: bold;
+}
+
+.order-history {
+  text-align: center;
+}
+
+.no-orders {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.no-orders img {
+  width: 200px;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.shop-btn {
+  display: inline-block;
+  background-color: var(--pink);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.shop-btn:hover {
+  background-color: var(--raspberry);
+}
+
+.order-items-container {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #fcfcfc; /* Daha açık bir arka plan */
+    border-radius: 8px;
+    border: 1px solid #eee;
+    box-shadow: inset 0 1px 5px rgba(0,0,0,0.02);
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 15px; /* Resim ve metin arasına boşluk */
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #e0e0e0; /* Ürünler arasına ince çizgi */
+}
+
+.order-item:last-child {
+    border-bottom: none; /* Son öğede çizgi olmasın */
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.order-item-image {
+    width: 125px;  /* Resmin genişliğini ayarlayın */
+    height: 150px; /* Resmin yüksekliğini ayarlayın */
+    object-fit: cover; /* Resmin oranlarını koruyarak kutuya sığdırır */
+    border-radius: 8px; /* Köşeleri yuvarlayın */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    flex-shrink: 0; /* Resmin küçülmesini engeller */
+}
+
+.item-details {
+    flex-grow: 1; /* Metnin kalan alanı doldurmasını sağlar */
+    font-size: 1rem;
+}
+
+.item-name {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 3px;
+}
+
+.item-qty-price {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Genel sipariş kartı stilleri */
+.order-card {
+    background-color: #FFFBFC; /* Arka plan rengi */
+    border-radius: 1.5rem; /* Daha yuvarlak köşeler */
+    padding: 2.5rem; /* Daha fazla iç boşluk */
+    margin: 25px auto; /* Üst-alt boşluk ve ortalama */
+    max-width: 800px; /* Kartın maksimum genişliğini belirleyin */
+    box-shadow: 0 8px 25px rgba(210, 240, 209, 0.5); /* Daha belirgin gölge */
+    border: none; /* Kenarlık yok */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(210, 240, 209, 0.6);
+}
+
+.order-card h3 {
+    color: #D67A92; /* Başlık rengi */
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #EFA6C8;
+    padding-bottom: 10px;
+    text-align: left; /* Başlığı sola hizala */
+}
+
+.order-card h4 {
+    color: #EFA6C8;
+    font-size: 1.3rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.order-card p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 8px;
+    text-align: left; /* Metinleri sola hizala */
+}
+
+.order-total {
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: right; /* Toplam tutarı sağa hizala */
+    margin-top: 20px;
+    color: #EFA6C8; /* Marka renginize uygun bir renk */
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.order-status {
+    font-size: 1.2rem;
+    text-align: right; /* Durumu sağa hizala */
+    margin-top: 10px;
+}
+
+.order-status span {
+    font-weight: bold;
+    color: #A2C760; /* Durum için yeşil renk */
+}
+
+/* Fatura Detay butonu */
+.order-detail-btn {
+    background-color: #A2C760; /* Yeni yeşil renk */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    float: right; /* Sağa hizala */
+    box-shadow: 0 4px 10px rgba(162, 199, 96, 0.3);
+}
+
+.order-detail-btn:hover {
+    background-color: #82b044; /* Hover rengi */
+}

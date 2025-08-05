@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fatura</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
+  <style>
+   
+    :root {
+      --pink-main: #F16DAE;
+      --green-pastel: #D2F0D1;
+      --raspberry: #DB2955;
+      --soft-white: #FFFBFC;
+      --text-dark: #1E1E1E;
+      --text-light: #BEBEBE;
+      --natural-green: #A2C760;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--soft-white);
+      color: var(--text-dark);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    
+    .invoice-container {
+      background-color: var(--soft-white);
+      border-radius: 12px;
+      padding: 30px 40px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      max-width: 800px;
+      margin: 40px auto;
+      min-height: 500px; 
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    h1, h3 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--raspberry);
+      margin-bottom: 15px;
+    }
+    h1 { font-size: 2.5rem; text-align: center; }
+    h3 { font-size: 1.8rem; border-bottom: 2px solid var(--green-pastel); padding-bottom: 10px; }
+
+    
+    #invoice-details p, #invoice-summary p {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+        color: var(--text-dark);
+    }
+    #invoice-details p strong, #invoice-summary p strong {
+        color: var(--raspberry);
+        font-weight: 600;
+    }
+    #invoice-summary p:last-child {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: var(--pink-main);
+        border-top: 1px solid #eee;
+        padding-top: 15px;
+        margin-top: 15px;
+    }
+
+    
+    #invoice-items-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+    #invoice-items-table th, #invoice-items-table td {
+        padding: 12px;
+        border-bottom: 1px solid #eee;
+        text-align: left;
+    }
+    #invoice-items-table th {
+        background-color: #f8f8f8;
+        font-weight: 600;
+        color: var(--pink-main);
+    }
+    #invoice-items-table td {
+        font-size: 1rem;
+        color: #555;
+    }
+
+    
+    .invoice-item-image {
+        width: 60px; 
+        height: 60px; 
+        object-fit: cover;
+        margin-right: 10px;
+        border-radius: 5px;
+        vertical-align: middle; 
+    }
+
+    
+    .print-button {
+      display: block;
+      width: 200px;
+      margin: 30px auto;
+      padding: 15px 25px;
+      background-color: var(--natural-green);
+      color: white;
+      text-align: center;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 10px rgba(162, 199, 96, 0.3);
+    }
+    .print-button:hover {
+      background-color: #82b044;
+    }
+
+    @media print {
+        .print-button {
+            display: none;
+        }
+        body {
+            background-color: white;
+        }
+        .invoice-container {
+            box-shadow: none;
+            border: 1px solid #ddd;
+        }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="invoice-container" id="invoice-content">
+    <p style="text-align: center; color: #DB2955;">Fatura bilgileri yükleniyor...</p>
+  </div>
+
+  <button class="print-button" onclick="window.print()">Faturayı Yazdır</button>
+
+  <script>
+    const BASE_URL = 'http://localhost:5000'; 
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const orderId = urlParams.get('orderId'); 
+
+      const invoiceContent = document.getElementById("invoice-content");
+      const printButton = document.querySelector('.print-button');
+
+      if (!orderId) {
+        invoiceContent.innerHTML = "<p style='text-align: center; padding: 40px; font-size: 1.2rem; color: #DB2955;'>Fatura bilgileri bulunamadı. Lütfen geçerli bir sipariş ID'si ile gelin.</p>";
+        if (printButton) printButton.style.display = 'none';
+        return;
+      }
+
+      const token = localStorage.getItem('token');
+      if (!token) {
+        invoiceContent.innerHTML = "<p style='text-align: center; padding: 40px; font-size: 1.2rem; color: #DB2955;'>Faturayı görüntülemek için lütfen giriş yapın.</p>";
+        if (printButton) printButton.style.display = 'none';
+        return;
+      }
+
+      try {
+        const response = await fetch(`${BASE_URL}/api/orders/${orderId}`, { 
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          }
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          
+          invoiceContent.innerHTML = `
+            <div id="invoice-header">
+              <h1>Faturanız</h1>
+              <p>Siparişiniz için teşekkür ederiz! 🎉</p>
+              <p>Sipariş ID: <strong id="inv-order-id">${data.order_id}</strong></p>
+              <p>Tarih: <strong id="inv-date">${new Date(data.order_date).toLocaleDateString('tr-TR')}</strong></p>
+            </div>
+
+            <div id="invoice-details">
+              <h3>Müşteri ve Teslimat Bilgileri</h3>
+              <p>Ad Soyad: <strong id="inv-name">${data.customer_name || 'N/A'}</strong></p>
+              <p>E-posta: <strong id="inv-email">${data.customer_email || 'N/A'}</strong></p>
+              <p>Teslimat Adresi: <strong id="inv-address">${data.shipping_address}</strong></p>
+              <p>Ödeme Yöntemi: <strong id="inv-payment">${data.payment_method}</strong></p>
+              <p>Teslimat Tarihi: <strong id="inv-delivery-date">${data.requested_delivery_date || 'Belirtilmedi'}</strong></p>
+            </div>
+
+            <div id="invoice-items">
+              <h3>Sipariş Detayları</h3>
+              <table id="invoice-items-table">
+                <thead>
+                  <tr>
+                    <th>Ürün</th>
+                    <th>Fiyat</th>
+                    <th>Adet</th>
+                    <th>Toplam</th>
+                  </tr>
+                </thead>
+                <tbody id="inv-items-body">
+                  </tbody>
+              </table>
+            </div>
+
+            <div id="invoice-summary">
+              <h3>Özet</h3>
+              <p>Ara Toplam: <span id="inv-subtotal">₺${data.total_amount_calculated_from_items ? data.total_amount_calculated_from_items.subtotal.toFixed(2) : '0.00'}</span></p>
+              <p>İndirim: <span id="inv-discount">₺0.00</span></p>
+              <p>KDV (18%): <span id="inv-tax">₺${data.total_amount_calculated_from_items ? data.total_amount_calculated_from_items.tax.toFixed(2) : '0.00'}</span></p>
+              <p>Kargo: <span id="inv-shipping">₺${data.total_amount_calculated_from_items ? (data.total_amount_calculated_from_items.shipping === 0 ? "Ücretsiz" : data.total_amount_calculated_from_items.shipping.toFixed(2)) : '0.00'}</span></p>
+              <p><strong>Toplam: <span id="inv-total">₺${parseFloat(data.total_amount).toFixed(2)}</span></strong></p>
+            </div>
+          `;
+
+          const tbody = document.getElementById("inv-items-body");
+          if (tbody && data.items) {
+            data.items.forEach(item => {
+              const row = document.createElement("tr");
+              row.innerHTML = `
+                <td>
+                  <img src="${item.image}" alt="${item.name}" class="invoice-item-image">
+                  ${item.name}
+                </td>
+                <td>₺${item.price.toFixed(2)}</td>
+                <td>${item.quantity}</td>
+                <td>₺${(item.price * item.quantity).toFixed(2)}</td>
+              `;
+              tbody.appendChild(row);
+            });
+          }
+
+          
+          let invSubtotal = 0;
+          if (data.items) {
+              data.items.forEach(item => {
+                  invSubtotal += item.price * item.quantity;
+              });
+          }
+          const invTaxRate = 0.18;
+          const invShippingCost = invSubtotal >= 500 ? 0 : 30;
+          const invTax = invSubtotal * invTaxRate;
+          
+          document.getElementById("inv-subtotal").textContent = `₺${invSubtotal.toFixed(2)}`;
+          document.getElementById("inv-tax").textContent = `₺${invTax.toFixed(2)}`;
+          document.getElementById("inv-shipping").textContent = invShippingCost === 0 ? "Ücretsiz" : `₺${invShippingCost.toFixed(2)}`;
+          document.getElementById("inv-total").textContent = `₺${(invSubtotal + invTax + invShippingCost).toFixed(2)}`;
+
+
+        } else {
+          invoiceContent.innerHTML = `<p style='text-align: center; padding: 40px; font-size: 1.2rem; color: #DB2955;'>Fatura bilgileri yüklenirken hata oluştu: ${data.message || 'Bilinmeyen hata.'}</p>`;
+          if (printButton) printButton.style.display = 'none';
+        }
+      } catch (error) {
+        console.error("Fatura bilgileri çekilirken ağ hatası:", error);
+        invoiceContent.innerHTML = "<p style='text-align: center; padding: 40px; font-size: 1.2rem; color: #DB2955;'>Ağ bağlantı hatası! Fatura yüklenemedi.</p>";
+        if (printButton) printButton.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

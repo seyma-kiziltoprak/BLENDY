@@ -1,0 +1,150 @@
+
+body{
+   
+
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+
+.container{
+    width: 900px;
+    max-width: 90vw;
+    margin:auto;
+    text-align: center;
+    padding-top: 10px;
+    
+}
+svg{
+    width: 30px;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+.left-placeholder{
+    width: 30px;
+}
+header .icon-cart{
+    position: relative;
+}
+
+header .icon-cart span {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    background-color: #DB2955 ;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+}
+.title{
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color:#3A614F
+    
+}
+.listProduct .item img{
+    width: 80% ;
+    border-radius: 20px;
+    
+}
+.listProduct{
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    
+}
+.product-content{
+    font-size: 14px;
+    color: #BEBEBE;
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+.AddToCart{
+    background-color:#F16DAE ;
+    border:2px solid #F16DAE;
+    font-size:14px;
+    font-family: 'Quicksand',sans-serif ;
+    color: #fffbfc;
+    border-radius:20px;
+    padding: 5px 18px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.AddToCart:hover{
+     transform: scale(1.1); 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+}
+.productInfo {
+    color:#3A614F;
+    font-size: 15px;
+    margin-bottom: 5px;
+    
+}
+.price{
+    line-height: 30px;
+    color:#1E1E1E;
+
+}
+.listProduct .item {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin: 20px;
+    
+}
+.metinler h3{
+    font-family: 'Quicksand', sans-serif;
+    color:#3A614F;
+}
+.metinler p{
+    font-family: 'Quicksand', sans-serif;
+     color:#1E1E1E;
+}
+.metinler h5{
+    font-family:'Quicksand', sans-serif ;
+    color: #BEBEBE;
+}
+.detailfoto img{
+    border-radius: 20px;
+    width: 80%;
+
+}
+.backButton {
+    position: absolute;
+    top: 70px;
+    left: 130px;
+    background-color: #F16DAE;
+    color: #fffbfc;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 10;
+    font-family: 'Quicksand',sans-serif;
+}
+.listProduct a {
+    text-decoration: none;
+    color: inherit; 
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+

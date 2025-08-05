@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ödeme</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="checkout.css" />
+</head>
+<body>
+  <div id="checkout-container">
+    
+    <h2>Güvenli Ödeme</h2>
+
+    <div class="checkout-form-flex">
+      
+      <div class="form-left">
+        <h3>Ödeme Bilgileri</h3>
+          <div id="card-info">
+            <div class="form-group">
+              <label for="card-number">Kart Numarası</label>
+              <input type="text" id="card-number" placeholder="1234 5678 9012 3456" />
+            </div>
+
+            <div class="card-row">
+              <div class="form-group">
+                <label for="card-expiration">Son Kullanma</label>
+                <input type="text" id="card-expiration" placeholder="MM/YY" />
+              </div>
+              <div class="form-group">
+                <label for="card-cvc">CVC</label> <input type="text" id="card-cvc" placeholder="123" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="card-name">Kart Üzerindeki Ad Soyad</label>
+              <input type="text" id="card-name" placeholder="Kart Sahibinin Adı Soyadı" required />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-right">
+        <form id="paymentForm">
+          <h3>Kişisel Bilgiler</h3>
+
+          <div class="form-group">
+            <label for="name">Ad Soyad</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-posta</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Telefon</label>
+            <input type="text" id="phone" name="phone" required />
+          </div>
+
+          <h3>Teslimat Bilgileri</h3>
+
+          <div class="form-group">
+            <label for="address">Adres</label>
+            <input type="text" id="address" name="address" required />
+          </div>
+
+          <div class="form-group">
+            <label for="neighborhood">Mahalle</label>
+            <input type="text" id="neighborhood" name="neighborhood" required />
+          </div>
+
+          <div class="form-group">
+            <label for="province">İl</label>
+            <input type="text" id="province" name="province" placeholder="İl yazınız" required />
+          </div>
+
+         <div class="form-group">
+            <label for="district">İlçe</label>
+            <input type="text" id="district" name="district" placeholder="İlçe yazınız" required />
+         </div>
+
+
+          <div class="form-group">
+            <label for="postal-code">Posta Kodu</label>
+            <input type="text" id="postal-code" name="postal-code" required />
+          </div>
+
+          <div class="form-group">
+            <label for="delivery-date">Teslimat Tarihi</label>
+            <input type="date" id="delivery-date" name="delivery-date" required />
+          </div>
+
+          <div class="form-group">
+            <label for="payment-method">Ödeme Yöntemi</label>
+            <select id="payment-method" name="payment-method" required>
+              <option value="credit-card">Kredi Kartı</option>
+              <option value="paypal">PayPal</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="order-note">Sipariş Notu (Opsiyonel)</label>
+            <textarea id="order-note" name="order-note" placeholder="Özel istekleriniz varsa yazabilirsiniz..."></textarea>
+          </div>
+
+          <button type="submit" id="placeOrderButton">Siparişi Tamamla</button>
+        </form>
+      </div>
+    </div>
+
+    
+    <div id="cart-summary">
+      <h3>Sepet Özeti</h3>
+      <table id="cart-summary-table">
+        <thead>
+          <tr>
+            <th>Ürün</th>
+            <th>Fiyat</th>
+            <th>Adet</th>
+            <th>Toplam</th>
+          </tr>
+        </thead>
+        <tbody id="checkout-items">
+          
+        </tbody>
+      </table>
+      <div id="checkout-total">
+        <p>Ara Toplam: <span id="checkout-subtotal">₺0.00</span></p>
+        <p>İndirim: <span id="checkout-discount">₺0.00</span></p>
+        <p>KDV (18%): <span id="checkout-tax">₺0.00</span></p>
+        <p>Kargo: <span id="checkout-shipping">₺0.00</span></p>
+        <p><strong>Toplam: <span id="checkout-total-price">₺0.00</span></strong></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="checkout.js"></script>
+</body>
+</html>
+
